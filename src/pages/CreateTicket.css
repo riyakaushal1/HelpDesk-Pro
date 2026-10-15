@@ -1,0 +1,124 @@
+/* ==========================================================================
+   CreateTicket — premium two-column layout
+   ========================================================================== */
+
+.create-ticket {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  align-items: start;
+  gap: 20px 28px;
+}
+
+.create-ticket > .page-header,
+.create-ticket > .field-error,
+.create-ticket > .success-banner {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.create-ticket-main {
+  min-width: 0;
+}
+
+.create-ticket-main .panel {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Guidance aside
+   -------------------------------------------------------------------------- */
+
+.create-ticket-aside {
+  position: sticky;
+  top: calc(var(--topbar-height) + 20px);
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  min-width: 0;
+}
+
+.create-ticket-aside .panel {
+  margin-bottom: 0;
+}
+
+.create-ticket-aside .page-action {
+  margin-top: 14px;
+}
+
+/* Tips --------------------------------------------------------------------- */
+
+.create-tip-list {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.create-tip {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+}
+
+.create-tip-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+}
+
+.create-tip strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.create-tip p {
+  margin-top: 2px;
+}
+
+/* Priority legend ---------------------------------------------------------- */
+
+.create-priority-list {
+  display: grid;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.create-priority-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.create-priority-row + .create-priority-row {
+  border-top: 1px solid var(--border);
+}
+
+.create-priority-row p {
+  font-size: 12.5px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1080px) {
+  .create-ticket {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .create-ticket-aside {
+    position: static;
+    top: auto;
+  }
+}

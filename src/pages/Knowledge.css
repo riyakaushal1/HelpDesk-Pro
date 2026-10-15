@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Knowledge Base — index & article detail
+   ========================================================================== */
+
+.kb-page {
+  display: grid;
+  gap: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero / search band
+   -------------------------------------------------------------------------- */
+
+.kb-hero {
+  position: relative;
+  padding: clamp(24px, 3.4vw, 38px);
+  overflow: hidden;
+  color: var(--text-inverse);
+  background:
+    radial-gradient(90% 140% at 88% 0%, rgba(99, 102, 241, 0.45), transparent 60%),
+    radial-gradient(70% 120% at 0% 118%, rgba(79, 70, 229, 0.38), transparent 62%),
+    linear-gradient(135deg, #161d3d 0%, #1a1b47 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 24px 60px -28px rgba(19, 26, 51, 0.55);
+  isolation: isolate;
+}
+
+.kb-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 46px 46px;
+  content: '';
+  mask-image: radial-gradient(72% 80% at 80% 14%, #000, transparent 76%);
+  pointer-events: none;
+}
+
+.kb-hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(264px, 0.66fr);
+  align-items: end;
+  gap: clamp(20px, 3vw, 42px);
+}
+
+.kb-hero-copy {
+  max-width: 580px;
+}
+
+.kb-hero .eyebrow {
+  color: #a5b4fc;
+}
+
+.kb-hero h1 {
+  margin: 12px 0 8px;
+  color: var(--text-inverse);
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.kb-hero .page-subtitle {
+  max-width: 560px;
+  color: #b9c1da;
+}
+
+.kb-hero-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.kb-hero .kb-search {
+  color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.97);
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: var(--shadow-sm);
+}
+
+.kb-count {
+  justify-self: end;
+  color: #c7cbe8;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Category toolbar
+   -------------------------------------------------------------------------- */
+
+.kb-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.kb-toolbar .category-pills {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Loading placeholders
+   -------------------------------------------------------------------------- */
+
+.kb-skeleton-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 20px;
+}
+
+.kb-skeleton-card .kb-skeleton-badge {
+  width: 104px;
+  height: 22px;
+  border-radius: var(--radius-pill);
+}
+
+.kb-skeleton-card .kb-skeleton-title {
+  width: 68%;
+  height: 16px;
+}
+
+.kb-skeleton-card .kb-skeleton-text {
+  width: 100%;
+  height: 11px;
+}
+
+.kb-skeleton-card .kb-skeleton-text-sm {
+  width: 76%;
+  height: 11px;
+}
+
+/* --------------------------------------------------------------------------
+   Article detail
+   -------------------------------------------------------------------------- */
+
+.article-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(258px, 0.4fr);
+  align-items: start;
+  gap: clamp(24px, 3vw, 44px);
+}
+
+.article-detail-main {
+  min-width: 0;
+}
+
+.article-back {
+  margin-bottom: 18px;
+}
+
+.article-detail-main .page-header {
+  margin-bottom: 18px;
+}
+
+.article-detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.article-detail-aside {
+  position: sticky;
+  top: calc(var(--topbar-height) + 24px);
+}
+
+.article-aside-card {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1080px) {
+  .kb-hero-inner,
+  .article-detail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .kb-hero-inner {
+    align-items: start;
+  }
+
+  .article-detail-aside {
+    position: static;
+  }
+}

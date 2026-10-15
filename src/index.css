@@ -1,0 +1,225 @@
+/* ==========================================================================
+   HelpDesk Pro — Design tokens
+   A single source of truth for colour, type, spacing, radius and elevation.
+   Every page and component consumes these variables.
+   ========================================================================== */
+
+:root {
+  /* ---- Surfaces -------------------------------------------------------- */
+  --bg: #f4f5f7;
+  --bg-subtle: #eef0f4;
+  --surface: #ffffff;
+  --surface-2: #f9fafb;
+  --surface-3: #f1f3f7;
+  --surface-inverse: #0b1220;
+  --surface-inverse-2: #111a2e;
+
+  /* ---- Ink ------------------------------------------------------------- */
+  --text: #0d1526;
+  --text-muted: #667085;
+  --text-soft: #8b93a5;
+  --text-inverse: #ffffff;
+  --text-inverse-muted: #9aa6c0;
+
+  /* ---- Lines ----------------------------------------------------------- */
+  --border: #e6e9ef;
+  --border-strong: #d5dae3;
+  --border-inverse: rgba(255, 255, 255, 0.09);
+
+  /* ---- Brand ----------------------------------------------------------- */
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-press: #3730a3;
+  --accent-soft: #eef1ff;
+  --accent-border: #d8defc;
+  --accent-ink: #3730a3;
+  --accent-contrast: #ffffff;
+
+  /* ---- Status ---------------------------------------------------------- */
+  --success: #067647;
+  --success-soft: #e9f8f1;
+  --success-border: #cdeadd;
+  --warning: #9a5b06;
+  --warning-soft: #fdf4e4;
+  --warning-border: #f4e3c4;
+  --danger: #b42318;
+  --danger-soft: #fef2f1;
+  --danger-border: #f7d9d6;
+  --info: #175cd3;
+  --info-soft: #eff5ff;
+  --info-border: #d6e4ff;
+
+  /* ---- Elevation ------------------------------------------------------- */
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-sm: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 6px 16px rgba(16, 24, 40, 0.07), 0 2px 5px rgba(16, 24, 40, 0.04);
+  --shadow-lg: 0 18px 44px rgba(16, 24, 40, 0.1);
+  --shadow-focus: 0 0 0 4px rgba(79, 70, 229, 0.14);
+
+  /* ---- Radius ---------------------------------------------------------- */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+
+  /* ---- Spacing --------------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --sidebar-width: 264px;
+  --topbar-height: 68px;
+  --content-max: 1240px;
+
+  /* ---- Type ------------------------------------------------------------ */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-heading: var(--font-sans);
+  --font-body: var(--font-sans);
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', 'Consolas', monospace;
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --focus: #4f46e5;
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.55;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-weight: 650;
+  letter-spacing: -0.022em;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Global affordances
+   ========================================================================== */
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+::selection {
+  color: var(--text-inverse);
+  background: var(--accent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c3c9d4 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  background: #c3c9d4;
+  background-clip: content-box;
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a7aec0;
+  background-clip: content-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
