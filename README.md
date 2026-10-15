@@ -1,16 +1,82 @@
-# React + Vite
+# HelpDesk Pro — Full-Stack MERN Helpdesk System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A Full-Stack Web Application for Customer Support and Ticket Management**
 
-Currently, two official plugins are available:
+HelpDesk Pro is a web-based helpdesk management system built with the MERN stack. It aims to simplify customer support by organizing support tickets, user accounts, and knowledge-base articles in one platform.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **Frontend:** React.js, JavaScript, HTML5, CSS3
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB, Mongoose
+- **Build Tool:** Vite
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- User registration and login
+- Support ticket creation and management
+- Ticket status and priority tracking
+- Knowledge base and support articles
+- Admin dashboard
+- Email verification and password reset flows
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*Features should be considered complete only after they have been tested in the running application.*
+
+## Project Structure
+
+```text
+HelpDesk-Pro/
+├── src/              # React frontend
+├── public/           # Static assets
+├── server/           # Node.js and Express backend
+│   ├── config/       # Configuration and database setup
+│   ├── controllers/  # Request handlers
+│   ├── middleware/   # Authentication and validation
+│   ├── models/       # Mongoose models
+│   ├── routes/       # API routes
+│   └── services/     # Backend services
+├── package.json
+└── README.md
+```
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/riyakaushal1/HelpDesk-Pro.git
+cd HelpDesk-Pro
+```
+
+### 2. Install frontend dependencies
+
+```bash
+npm install
+```
+
+### 3. Install backend dependencies
+
+```bash
+cd server
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env` file inside the `server/` directory using `server/.env.example` as a reference. Configure your MongoDB connection string, JWT secret, and other required environment variables locally.
+
+**Never commit real credentials or secret keys to GitHub.**
+
+### 5. Run the application
+
+Start the backend and frontend using the scripts defined in their respective `package.json` files. Configure the required environment variables before starting the server.
+
+## Project Status
+
+This project is under development. Setup instructions, integrations, and features may change as development progresses.
+
+## Author
+
+**Riya Kaushal**
+
+GitHub: [@riyakaushal1](https://github.com/riyakaushal1)
